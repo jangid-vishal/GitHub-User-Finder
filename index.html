@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Profile Finder</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Segoe UI"', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            githubBg: '#0d1117',
+            githubSurface: '#161b22',
+            githubBorder: '#30363d',
+            githubAccent: '#2f81f7'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans bg-githubBg text-gray-300 min-h-screen flex items-center justify-center px-4 py-12">
+
+  <div class="w-full max-w-2xl">
+    <h1 class="text-3xl font-bold mb-8 text-center text-white">🔍 GitHub Profile Finder</h1>
+
+    <!-- Input section -->
+    <div class="flex items-center gap-3 mb-8">
+      <input id="username" type="text" placeholder="Enter GitHub username"
+        class="flex-1 px-4 py-3 bg-githubSurface border border-githubBorder text-white rounded-md placeholder-gray-500 focus:ring-2 focus:ring-githubAccent focus:outline-none transition" />
+      <button id="searchBtn"
+        class="bg-githubAccent hover:bg-blue-600 text-white font-semibold px-5 py-3 rounded-md transition">
+        Search
+      </button>
+    </div>
+
+    <!-- Result section -->
+    <div id="profile" class="transition-all space-y-4"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
